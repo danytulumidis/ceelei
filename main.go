@@ -5,11 +5,15 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/mitchellh/go-homedir"
+
 	bolt "go.etcd.io/bbolt"
 )
 
 func main() {
-	db, err := bolt.Open("my.db", 0600, nil)
+	dir, _ := homedir.Dir()
+	dir += "/ceelei.db"
+	db, err := bolt.Open(dir, 0600, nil)
 	if err != nil {
 		log.Fatal(err)
 	}

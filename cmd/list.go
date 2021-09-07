@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"encoding/binary"
+	"encoding/json"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -9,8 +11,8 @@ import (
 
 var listCmd = &cobra.Command{
   Use:   "list",
-  Short: "List all your saved CLI commands",
-  Long:  `A list of all your saved CLI commands that you saved within Ceelei currently`,
+  Short: "List all your saved CLI commands.",
+  Long:  `A list of all your saved CLI commands that you saved within Ceelei currently.`,
   Run: func(cmd *cobra.Command, args []string) {
     listFromDatabase()
   },
@@ -23,10 +25,18 @@ func init() {
 func listFromDatabase() {
   db.View(func(tx *bolt.Tx) error {
     b := tx.Bucket([]byte("ceelei"))
+
     b.ForEach(func(k, v []byte) error {
-      fmt.Printf("Command: %s, Description: %s\n", k, v)
+      var currCommand newCommand
+      json.Unmarshal(v, &currCommand)
+      fmt.Printf("%v - Command: %v, Description: %s\n", btoi(k), currCommand.Command, currCommand.Description)
       return nil
     })
+    
     return nil
   })
+}
+
+func btoi(b []byte) int {
+  return int(binary.BigEndian.Uint64(b))
 }
