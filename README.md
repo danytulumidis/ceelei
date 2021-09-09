@@ -10,23 +10,28 @@ Adding and listing CLI commands inside the CLI is easy and pleasant for the user
 
 ## ceelei
 ![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/base_command.png)
+
 After you installed ceelei you can just type ceelei into your CLI and get an overview about what ceelei is and how to use it.
 
 ## ceelei add
 ![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/add_command.png)
-With ceelei add <command> <description> you can add a command with a description to your list.
+
+With ceelei add "command" "description" you can add a command with a description to your list.
 
 ## ceelei help
 ![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/help_command.png)
+
 Of course every command has a -help command flag when you need help.
 
 ## ceelei list
 ![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/list_command.png)
+
 With ceelei list you will see all the commands with the description you gave them in a list. Each command also has an unique ID.
 
 ## ceelei remove
 ![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/remove_command.png)
-With ceelei remove <id> you can easily remove a command from your list. Just use the ID of the command what you can show with ceelei list.
+
+With ceelei remove "id" you can easily remove a command from your list. Just use the ID of the command what you can show with ceelei list.
 
 # Saved locally
 Your CLI list will be saved locally inside your home directory inside a file called ceelei.db.
@@ -37,6 +42,7 @@ After adding a new command with ceelei this file will be generated again.
 Some ideas that i might want to add in the future:
  - edit functionality
  - grouping the commands
+ - ...
 
 If you have suggestions or ideas please create a PR.
 
