@@ -11,7 +11,7 @@ var db *bolt.DB
 var rootCmd = &cobra.Command{
 	Use:   "ceelei",
 	Short: "Ceelei is a CLI helper inside the CLI to help you remember your commands.",
-	Long: `Ceelei will help you to remember your favourite CLI commands without the need to search for it in the Web or go through your notes. It will be saved into a local database withing your home directory called ceelei.db.
+	Long: `Ceelei will help you to remember your favourite CLI commands without the need to search for it in the Web or go through your notes. It will be saved into a local database within your home directory called ceelei.db.
 Stay inside the CLI, stay focussed!`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:

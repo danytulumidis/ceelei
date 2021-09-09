@@ -9,7 +9,7 @@ import (
 
 var removeCmd = &cobra.Command{
   Use:   "remove <id>",
-  Short: "Remove a command with the specified id",
+  Short: "Remove a command with the specified id.",
   Args: cobra.ExactArgs(1),
   Run: func(cmd *cobra.Command, args []string) {
     id, _ := strconv.ParseInt(args[0], 10, 64)

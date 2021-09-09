@@ -8,7 +8,7 @@ import (
 	bolt "go.etcd.io/bbolt"
 )
 
-type newCommand struct {
+type NewCommand struct {
 	ID int
 	Command string
 	Description string
@@ -34,7 +34,7 @@ func addToDatabase(args []string) {
 		b := tx.Bucket([]byte("ceelei"))
 
 		id, _ := b.NextSequence()
-		myCommand := newCommand{
+		myCommand := NewCommand{
 			int(id),
 			string(args[0]),
 			args[1],
@@ -45,7 +45,7 @@ func addToDatabase(args []string) {
 		if err != nil {
             return err
         }
-		
+
 		return b.Put(itob(myCommand.ID), encoded)
 	})
 }

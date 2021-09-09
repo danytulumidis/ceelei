@@ -8,7 +8,7 @@ import (
 
 var versionCmd = &cobra.Command{
   Use:   "version",
-  Short: "Print the version number of Ceelei",
+  Short: "Print the current version number of Ceelei",
   Long:  `The version of Ceelei that is currently installed on your system`,
   Run: func(cmd *cobra.Command, args []string) {
 	fmt.Println("Ceelei v0.1")

@@ -14,7 +14,9 @@ var listCmd = &cobra.Command{
   Short: "List all your saved CLI commands.",
   Long:  `A list of all your saved CLI commands that you saved within Ceelei currently.`,
   Run: func(cmd *cobra.Command, args []string) {
+    fmt.Println("----------CEELEI LIST----------")
     listFromDatabase()
+    fmt.Println("-------------------------------")
   },
 }
 
@@ -27,9 +29,9 @@ func listFromDatabase() {
     b := tx.Bucket([]byte("ceelei"))
 
     b.ForEach(func(k, v []byte) error {
-      var currCommand newCommand
+      var currCommand NewCommand
       json.Unmarshal(v, &currCommand)
-      fmt.Printf("%v - Command: %v, Description: %s\n", btoi(k), currCommand.Command, currCommand.Description)
+      fmt.Printf("%v: Command: %v - Description: %s\n", btoi(k), currCommand.Command, currCommand.Description)
       return nil
     })
     
