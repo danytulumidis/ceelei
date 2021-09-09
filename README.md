@@ -19,7 +19,7 @@ After you installed ceelei you can just type ceelei into your CLI and get an ove
 With ceelei add "command" "description" you can add a command with a description to your list.
 
 ## ceelei help
-![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/help_command.png)
+![ceelei base command](https://media-files-dtf.s3.eu-central-1.amazonaws.com/github_media/ceelei/add_help.png)
 
 Of course every command has a -help command flag when you need help.
 
